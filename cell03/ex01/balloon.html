@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+        } 
+    </style>
+</head>
+<body>
+    <div id="balloon" onclick="increaseSize()" onmouseleave="reduceSize()"></div>
+</body>
+<script>
+    var colors = ["red", "green", "blue"];
+    var colorIndex = 0;
+    var balloon = document.getElementById('balloon');
+    var curr_width = balloon.offsetWidth;
+    var curr_height = balloon.offsetHeight;
+
+    function increaseSize() {
+
+        colorIndex += 1;
+        if (colorIndex > 2){
+            colorIndex = 0
+        }
+
+        if (curr_width <= 420 && curr_height <= 420) {
+            curr_width += 10; 
+            curr_height += 10; 
+        } 
+        else {
+            curr_width = 200;
+            curr_height = 200;
+        }
+
+        balloon.style.width = curr_width + 'px';
+        balloon.style.height = curr_height + 'px';
+        balloon.style.backgroundColor = colors[colorIndex];
+    }
+
+    function reduceSize() {
+
+        colorIndex -= 1;
+        if (colorIndex < 0){
+            colorIndex = 2
+        }
+
+        if (curr_width > 200 && curr_height > 200) {
+            curr_width -= 5; 
+            curr_height -= 5; 
+        }
+
+        balloon.style.width = curr_width + 'px';
+        balloon.style.height = curr_height + 'px';
+        balloon.style.backgroundColor = colors[colorIndex];
+    }
+</script>
+</html>
