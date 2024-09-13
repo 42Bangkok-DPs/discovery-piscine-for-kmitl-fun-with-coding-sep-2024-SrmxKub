@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    background-color: #e5d9fd;
+    background-image: url(https://c0.wallpaperflare.com/preview/912/739/608/black-coffee-break-break-time-brewed-coffee.jpg);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100vh; 
+    margin: 0;
+}
+
+nav {
+    background-color: #0a0221; 
+    display: flex;
+    margin-bottom: 30px;
+    a, p{
+        text-decoration: none; 
+        padding: 20px; 
+        background-color: #0a0221; 
+        color: white; 
+        font-weight: bold; 
+        font-size: 20px; 
+        transition: background-color 0.3s ease; 
+    }
+    a{
+        cursor: pointer; /* Change cursor to pointer */
+    }
+    p{
+        margin-left: auto;
+    }
+    a:hover {
+        background-color: #2c2b37; /* Change color on hover */
+        color: #ffe554;
+    }
+    
+    a:active {
+        background-color: #23212c; /* Lighter color when pressed */
+    }
+}
+
+.main-content{ 
+    display: flex;
+    column-gap: 3%;
+    justify-content: center;
+
+    img{
+        border-radius: 3px;
+    }
+
+    .card{
+        padding: 20px;
+        width: min(30%, 400px);
+        /* margin-top: 5%; */
+    }
+    .card:hover{
+        background-color: #fff3ad;
+    }
+    .card a {
+        background-color: #23212c;
+    }
+    .card a:hover {
+        background-color: #2c2b37;
+        color: #ffe554;
+    }
+
+}
+
+.card-title {
+    font-size: 0.95rem; /* Default size */
+}
+
+@media (min-width: 800px) {
+    .card-title {
+        font-size: 1.2rem; /* Larger for medium screens */
+    }
+}
+
+
+.prae, .louis{
+    .content {
+        display: flex; 
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between;
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .content img {
+        padding: 20px;
+        background-color: #fff7ff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        margin-left: 30px; 
+        margin-right: 30px; 
+    }
+    
+    .content .info {
+        flex-grow: 1; /* Make info take the remaining space */
+        background: #fff7ff;
+        padding: 40px;
+        border-radius: 15px;
+        margin-right: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact {
+        background: #fff7ff;
+        padding: 10px;
+        border-radius: 15px;
+        margin-left: 55px; 
+        margin-right: 55px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact div, .info div .skill div{
+        margin-bottom: 10px; /* Add space between lines of information */
+    }
+    
+    .skill {
+        background: #fff7ff;
+        padding: 10px;
+        border-radius: 15px;
+        margin: 55px; 
+        margin-top: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact div img {
+        margin-right: 15px;
+        margin-left: 10px;
+    }
+}
+
+
+.prae {
+    background-color: #d9c8fa;
+    nav {
+        background-color: #3a0066; 
+        a, p {
+            background-color: #3a0066; 
+        }
+        a:hover {
+            background-color: #633799; 
+        }
+        
+        a:active {
+            background-color: #2c004d; 
+        }
+    }
+}
+
+.louis {
+    background-color: #daedff; 
+    nav {
+        background-color: #003366; 
+        a, p {
+            background-color: #003366; 
+        }
+        a:hover {
+            background-color: #1f64a8; 
+        }
+        
+        a:active {
+            background-color: #042448; 
+        }
+    }
+} 
