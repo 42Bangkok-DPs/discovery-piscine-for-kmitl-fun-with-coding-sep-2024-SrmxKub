@@ -30,7 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
         tasks.forEach(task => {
             todos.push(task.textContent);
         });
-        document.cookie = `todos=${JSON.stringify(todos)};path=/`;
+        const expireDate = new Date();
+        expireDate.setTime(expireDate.getTime() + (7 * 24 * 60 * 60 * 1000));
+        const expires = `expires=${expireDate.toUTCString()}`;
+        document.cookie = `todos=${JSON.stringify(todos)};${expires};path=/`;
     }
 
     function loadTodos() {
@@ -38,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const todoCookie = cookies.find(row => row.startsWith('todos='));
         if (todoCookie) {
             const todos = JSON.parse(todoCookie.split('=')[1]);
-            todos.reverse().forEach(todo => {
+            todos.forEach(todo => {
                 addTodo(todo);
             });
         }
