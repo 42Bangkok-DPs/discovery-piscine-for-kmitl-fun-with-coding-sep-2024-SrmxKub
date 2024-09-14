@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 20%;
+        }
+        select {
+            width: 60px; 
+            font-size: 30px; 
+        }
+        input{
+            width: 150px; 
+            height: 30px; 
+            font-size: 15px; 
+        }
+    </style>
+</head>
+<body>
+    <form id="cal">
+        <input type="text" id="n1" placeholder="Number 1">
+        <select id="operator" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="n2" placeholder="Number 2">
+        <input type="submit" value="Try me!">
+    </form>
+</body>
+<script>
+    document.getElementById("cal").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var n1 = parseFloat(document.getElementById("n1").value);
+        var n2 = parseFloat(document.getElementById("n2").value);
+        var operator = document.getElementById("operator").value;
+        var ans;
+        if (Number.isInteger(n1) && Number.isInteger(n2) && n1 >= 0 && n2 >= 0) {
+            switch (operator) {
+                case "+":
+                    ans = n1 + n2;
+                    console.log("Answer: " + ans);
+                    alert("Answer: " + ans);
+                    break;
+                case "-":
+                    ans = n1 - n2;
+                    console.log("Answer: " + ans);
+                    alert("Answer: " + ans);
+                    break;
+                case "*":
+                    ans = n1 * n2;
+                    console.log("Answer: " + ans);
+                    alert("Answer: " + ans);
+                    break;
+                case "/":
+                    if (n2 == 0) {
+                        console.log("It's over 9000!");
+                        alert("It's over 9000!");
+                        break;
+                    }
+                    ans = n1 / n2;
+                    console.log("Answer: " + ans);
+                    alert("Answer: " + ans);
+                    break;
+                case "%":
+                    if (n2 == 0) {
+                        console.log("It's over 9000!");
+                        alert("It's over 9000!");
+                        break;
+                    }
+                    ans = n1 % n2;
+                    console.log("Answer: " + ans);
+                    alert("Answer: " + ans);
+                    break;
+            }
+        }
+        else {
+            console.log("Error :(");
+            alert("Error :(");
+        }
+    });
+    setInterval(function () {
+        alert("Please, use me...");
+    }, 30000);
+</script>
+</html>
